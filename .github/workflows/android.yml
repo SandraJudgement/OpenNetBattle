@@ -1,0 +1,29 @@
+name: AndroidBuild
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.0 
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.13.0
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+        cache: gradle
+    - name: Build with Gradle
+      run: chmod +x ./android/gradlew
+    - name: Build with Gradle
+      run: ./android/gradlew build
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        name: Mealz.apk
+        path: app/build/outputs/apk/debug/app-debug.apk
