@@ -1,4 +1,4 @@
-# ❓ ABOUT
+# ❓ ABOUT 
 Follow this project on :bird: [Twitter](https://twitter.com/OpenNetBattle)!
 
 This project aims to be an accurate mmbn6 battle engine that can be used to program custom enemies, chips, navis, or used to make your own mmbn story.
