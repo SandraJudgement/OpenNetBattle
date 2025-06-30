@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'adopt'
         cache: gradle
     - name: Build with Gradle
       run: chmod +x ./android/gradlew
